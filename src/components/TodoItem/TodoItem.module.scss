@@ -23,6 +23,18 @@
       pointer-events: none;
     }
   }
+
+  &.isAppearing {
+    animation: appear calc(var(--transition-duration) * 2);
+    pointer-events: none;
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        translate: 0 -75%;
+      }
+    }
+  }
 }
 
 .checkbox {

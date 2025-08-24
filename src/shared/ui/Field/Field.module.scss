@@ -1,0 +1,65 @@
+.field {
+  position: relative;
+
+  &:has(.input:not(:placeholder-shown)) .label {
+    color: var(--color-black);
+    scale: 0.7;
+    translate: -1.75em -2.6em;
+  }
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 17px;
+  color: var(--color-gray-3);
+  translate: 0 -50%;
+}
+
+.input {
+  --fieldInputPaddingX: 16px;
+  --fieldSeachInputIconSize: 16px;
+
+  width: 100%;
+  height: var(--input-height);
+  padding-inline: var(--fieldInputPaddingX);
+  background-color: transparent;
+  border: var(--border);
+  border-radius: var(--border-radius);
+
+  &:hover,
+  &:focus {
+    border-color: var(--color-dark-2);
+  }
+
+  &:focus {
+    background-color: var(--color-gray-1);
+    outline: none;
+  }
+
+  &[type="search"] {
+    &:placeholder-shown {
+      padding-right: calc(var(--fieldInputPaddingX) * 2 + var(--fieldSeachInputIconSize));
+      background-image: url('@/shared/assets/icons/icon-search_black.svg');
+      background-position: calc(100% - var(--fieldInputPaddingX)) 50%;
+      background-size: var(--fieldSeachInputIconSize);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &.isInvalid {
+    border-color: red;
+  }
+}
+
+.error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 12px;
+  color: red;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+}

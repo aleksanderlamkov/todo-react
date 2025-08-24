@@ -1,4 +1,4 @@
-.todo-item {
+.todoItem {
   display: flex;
   align-items: center;
   column-gap: 12px;
@@ -10,13 +10,13 @@
     background-color: var(--color-gray-1);
   }
 
-  &.is-disappearing {
+  &.isDisappearing {
     opacity: 0;
     translate: 0 -75%;
     transition-duration: calc(var(--transition-duration) * 2);
     pointer-events: none;
 
-    & ~ .todo-item {
+    & ~ .todoItem {
       translate: 0 calc((100% + var(--todoListRowGap)) * -1);
       transition-delay: var(--transition-duration);
       transition-duration: var(--transition-duration);
@@ -25,7 +25,7 @@
   }
 }
 
-.todo-item__checkbox {
+.checkbox {
   flex-shrink: 0;
   appearance: none;
   position: relative;
@@ -39,7 +39,7 @@
     background-color: var(--color-dark-2);
     border-color: var(--color-dark-2);
 
-    & + .todo-item__label {
+    & + .label {
       color: var(--color-gray-4);
       text-decoration: line-through;
     }
@@ -63,12 +63,12 @@
   }
 }
 
-.todo-item__label {
+.label {
   width: 100%;
   pointer-events: none;
 }
 
-.todo-item__delete-button {
+.deleteButton {
   flex-shrink: 0;
   display: inline-flex;
   justify-content: center;

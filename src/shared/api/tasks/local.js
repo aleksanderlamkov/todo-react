@@ -46,7 +46,7 @@ const localAPI = {
   delete: async (id) => {
     await delay()
 
-    const tasks = read().filter((task) => task.id === id)
+    const tasks = read().filter((task) => task.id !== id)
 
     write(tasks)
   },
